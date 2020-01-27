@@ -26,9 +26,14 @@ export default class PathVisualizer extends Component{
     render(){
         const {nodes} = this.state;
         console.log(nodes);
-        return <div>
-            Shortest Path Visualizer
-            <Node></Node>
+        return (
+        <div className = "grid">
+            {nodes.map((row,rowIdx) => {
+                return <div>
+                    {row.map((node,nodeIdx) => <Node></Node>)}
+                </div>
+            })}
         </div>
+        );
     }
 }
